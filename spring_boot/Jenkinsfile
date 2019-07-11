@@ -101,7 +101,7 @@ pipeline {
                 echo "${gitUserName} ${emailAddress}"
 
                 //To User readProperties 'pipeline utility steps' plugin must be installed
-                def props = readProperties file: 'jenkins/my.properties'
+                def props = readProperties file: 'jenkins/log.properties'
                 batchIDText = props.toString().substring(props.toString().indexOf("BATCHID:") + "BATCHID:".length());
                 batchID = batchIDText.takeWhile { it != ']' }
                 echo "${batchID}"
